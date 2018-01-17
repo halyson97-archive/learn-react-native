@@ -6,6 +6,10 @@ import {
 } from 'react-native';
 
 export default class Profile extends Component {
+  static navigationOptions = {
+    title: 'Meu perfil'
+  }
+
   render() {
     return (
       <View style={styles.container}>
