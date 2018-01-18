@@ -12,26 +12,17 @@ import {
   View
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        {/*  <View style={[styles.box, styles.box2]} /> */}
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
+        <View style={styles.box} />
       </View>
     );
   }
@@ -39,19 +30,29 @@ export default class App extends Component<{}> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flexDirection: 'row', //column, row
+    // width: 200,
+    flex: 1, //quer dizer que é flexivel, e 1 ocupa todo o espaço da tela
+    backgroundColor: '#ccc',
+    flexWrap: 'wrap', //no-wrap, wrap
+    alignContent: 'space-around', //center, space-between, space-around
+    // alignItems: 'center', //flex-start, flex-end, center // nao funciona quando se tem flexwrap, ai usa aligncontent
+    // justifyContent: 'space-around' //space-between, space-around
+
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  box: {
+    height: 100,
+    // width: 100,
+    minWidth: 100,
+    flex: 1, //quer dizer que é flexivel, e 1 todos o elementos caberao na tela
+    backgroundColor: '#666',
+    borderColor: '#999',
+    borderWidth: 5,
+    margin: 10
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
+  // box2:{
+  //   alignSelf: 'flex-end'
+  // }
+
 });
