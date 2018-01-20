@@ -1,3 +1,6 @@
+
+
+
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -12,36 +15,29 @@ import {
   View
 } from 'react-native';
 
-import SplashScreen from 'react-native-splash-screen';
+import { TabNavigator } from 'react-navigation';
+
+import Tela from './Tela';
+import Init from './Init';
+import Navigator from './Navigator';
 
 
-export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-      	<View style={styles.header}>
-	        <Text>Voltar</Text>
-	        <Text>Titulo</Text>
-	        <Text>Perfil</Text>
-        </View>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-  	flex: 1,
-  	backgroundColor: '#ccc'
+const MyApp = TabNavigator({
+  Home: {
+    screen: Tela,
   },
-
-  header:{
-  	height: 60,
-  	backgroundColor: '#FFF',
-  	paddingHorizontal: 20,
-  	flexDirection: 'row',
-  	alignItems: 'center',
-  	justifyContent: 'space-between',
-  }
-
+  Inicio: {
+    screen: Init,
+  },
+  Navigator: {
+    screen: Navigator,
+  },
+}, {
+  tabBarPosition: 'top',
+  animationEnabled: true,
+  tabBarOptions: {
+    activeTintColor: '#e91e63',
+  },
 });
+
+export default MyApp;
