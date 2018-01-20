@@ -9,22 +9,41 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
+import Turn from './components/Turn';
+
 export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-      </View>
-    );
-  }
+
+	state = {
+		status: false
+	}
+
+	clicked = ()=>{
+		this.setState({
+			status: !this.state.status
+		})
+	}
+
+
+  	render() {
+    	return (
+      		<View style={styles.container}>
+	        	<Text style={styles.welcome}>
+	          		Welcome to React Native!
+	        	</Text>
+
+	        	<Turn status={this.state.status}/>
+
+	        	<Button 
+	        		onPress={this.clicked}
+	        		title="Click here"
+	        	/>
+      		</View>
+    	);
+  	}
 }
 
 const styles = StyleSheet.create({
