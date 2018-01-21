@@ -1,66 +1,20 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Button
-} from 'react-native';
+import {Actions, Scene, Router} from 'react-native-router-flux';
 
-import Turn from './components/Turn';
+import Login from './scenes/Login';
+import Home from './scenes/Home';
+import Empresa from './scenes/Empresa';
 
-export default class App extends Component<{}> {
+const scenes = Actions.create(
+  <Scene key="root">
+    <Scene key="login" component={Login} />
+    
+    
+  </Scene>
+);
 
-	state = {
-		status: false
-	}
-
-	clicked = ()=>{
-		this.setState({
-			status: !this.state.status
-		})
-	}
-
-
-  	render() {
-    	return (
-      		<View style={styles.container}>
-	        	<Text style={styles.welcome}>
-	          		Welcome to React Native!
-	        	</Text>
-
-	        	<Turn status={this.state.status}/>
-
-	        	<Button 
-	        		onPress={this.clicked}
-	        		title="Click here"
-	        	/>
-      		</View>
-    	);
-  	}
+export default class App extends Component {
+  render() {
+    return <Router scenes={scenes}/>
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});

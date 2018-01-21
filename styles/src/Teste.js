@@ -8,10 +8,10 @@ import {
 
 import Post from './components/Post';
 
-export default class Posts extends Component {
+export default class Teste extends Component {
 
   static navigationOptions = {
-    title: 'Posts'
+    title: 'Teste'
   }
 
 
@@ -23,7 +23,7 @@ export default class Posts extends Component {
       <ScrollView style={styles.container}>
 
         <TouchableOpacity
-          onPress={()=>{ navigate('Tela') }}
+          onPress={()=>{ navigate('MyApp') }}
           style={styles.profileButton}
         >
           <Text style={styles.profileButtonText}>Meu perfil</Text>

@@ -16,6 +16,7 @@ import {
 export default class Turn extends Component<{}> {
 
   	render() {
+      
     	return (
       		<View style={styles.container}>
 	        	<View style={ this.props.status ? [styles.view, styles.on] : [styles.view, styles.off] }/>

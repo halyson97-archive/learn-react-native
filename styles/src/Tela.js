@@ -27,7 +27,7 @@ export default class Tela extends Component<{}> {
       	
 
         <TouchableOpacity
-          onPress={()=>{ navigate('Inicio') }}
+          onPress={()=>{ navigate('Teste') }}
           style={styles.profileButton}
         >
           <Text style={styles.profileButtonText}>Meu perfil</Text>
