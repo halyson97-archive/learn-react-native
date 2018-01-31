@@ -1,0 +1,3 @@
+rootProject.name = 'gonativeWeek'
+
+include ':app'
